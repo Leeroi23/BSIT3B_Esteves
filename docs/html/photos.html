@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cssphotos.css">
+    <script src="../js/jsphotos.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <img src="../pictures/image.png" alt="Logo">
+        <div>
+            <button onclick="window.location.href='../html/index.html'">HOME</button>
+            <button onclick="window.location.href='../html/photos.html'">PHOTOS</button>
+            <button onclick="window.location.href='../html/hobby.html'">ACTIVITY</button>
+        </div>
+    </nav>
+    <center><h1>PHOTOS OF MY CAT AND ME</h1></center>
+    <!-- Image Slider -->
+    <div class="slider">
+        <div class="slides">
+            <img src="../pictures/1.jpg" alt="Image 1">
+            <img src="../pictures/2.jpg" alt="Image 2">
+            <img src="../pictures/3.jpg" alt="Image 3">
+            <img src="../pictures/6.jpg" alt="Image 4">
+            <img src="../pictures/5.jpg" alt="Image 5">
+        </div>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        body.light {
+            background-color: white;
+            color: black;
+        }
+        body.dark {
+            background-color: black;
+            color: white;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+<center>
+    <div class="container">
+        <h1>ACTIVITY</h1>
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <button onclick="addNumbers()">Add</button>
+        <p id="result"></p>
+        <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
+        <script>
+            function addNumbers() {
+                const num1 = parseFloat(document.getElementById('num1').value);
+                const num2 = parseFloat(document.getElementById('num2').value);
+                const sum = num1 + num2;
+                document.getElementById('result').innerText = `Result: ${sum}`;
+            }
+            function toggleMode() {
+                const body = document.body;
+                body.classList.toggle('dark');
+                body.classList.toggle('light');
+            }
+        </script>
+    </div>
+</center>
+</body>
+</html>
